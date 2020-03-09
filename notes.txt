@@ -1,0 +1,26 @@
+NETWORKING NEEDED FOR SOCKETS(sockets are all networking)
+TCP:
+* When using the internet, the way that data is being transfered across
+  multiple computers on a network is through "packets".
+
+  - packets: (data partition sent through the internet)
+
+    * there are 5 layers to a packet.
+      1. Application(HTTP/FTP/SMTP/SSH - protocols most familiar to developers)
+      2. Transport:
+         - UDP: User Datagram Protocol
+           * lightweight (only 8 bytes per header)
+           * connectionless (when there is communication between a 
+             client and a server, UDP can send data directly without establiching
+             a connection)
+           * UDP will send data no matter what. Whether there are dropped packets,
+             packets are out of order. It is VERY fast, but VERY unreliable
+           * used for things like video games, and/or real time communication. 
+         - TCP: responsible for access to ports. Creates ports on
+                a computer up to (2^16) 65,000 ports available to use
+            * 
+      3. network(IP - Internet Protocol)
+      4. Link(WiFi or ethernet connection)
+      5. Physical(cables that are connecting things together)
+
+* 
