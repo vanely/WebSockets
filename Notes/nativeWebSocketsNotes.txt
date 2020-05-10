@@ -1,0 +1,7 @@
+https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/WebSocket
+Native WebSocket object allows us to create a socket connection from client to server.
+The WebSocket API provides event handler properties for sending and receiving data back and forth between a socket server and a client.
+
+https://github.com/websockets/ws#api-docs
+The "ws" npm package is a light weight socket library for initializing a socket server.
+The "ws" API also provides the same event handlers for sending and receiving data back and forth between the socket server and the client.

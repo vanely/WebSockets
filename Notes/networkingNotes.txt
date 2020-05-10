@@ -1,0 +1,49 @@
+https://microchipdeveloper.com/tcpip:tcp-ip-five-layer-model
+
+NETWORKING NEEDED FOR SOCKETS(sockets are all networking)
+TCP(Transmission Control Protocol):
+* When using the internet, the way that data is being transfered across
+  multiple computers on a network is through "packets".
+
+  - packets: (data partition sent through the internet)
+
+    * there are 5 layers to a packet.
+      1. Application(HTTP/FTP/SMTP/SSH - protocols most familiar to developers)
+        - data moving through an HTTP connection have a header(what type of data is in body), and body(a request). 
+          * header contains meta-data(data that describes the data(body)) EX: "Content-Type": "text/html", "Content-Type": "application/json"
+          * body conatins data being sent or received
+
+      2. Transport:
+        - data moving through a TCP connection also have a header() and body()  
+
+         - UDP: User Datagram Protocol (https://www.omnisecu.com/tcpip/udp-user-datagram-protocol.php)
+           * lightweight (only 8 bytes per header)
+           * connectionless (when there is communication between a 
+             client and a server, UDP can send data directly without establiching
+             a connection)
+           * UDP will send data no matter what. Whether there are dropped packets,
+             packets are out of order. It is VERY fast, but VERY unreliable
+           * used for things like video games, and/or real time communication. 
+
+         - TCP: responsible for access to ports. Creates ports on (https://www.omnisecu.com/tcpip/tcp-header.php)
+                a computer up to (2^16) 65,000 ports available to use
+            * connection based (requires a process known as a three way handshake before a connection is established)
+              1. asks server for connection.
+              
+              2. server responds with yes or no.
+
+              3. if server allows connection, data can begin moving in between
+
+            * reliable connection, because of the three way handshake. Unlike UDP
+            * delivery acknowledgements. Let's server know when data is sent, and is alerted by server when receiving data
+            * retrasmission. If data was expected on either side via delivery acknowledgement, but not recieved the data can be retransmitted
+            * TCP guarentees that data moves through the network in the right order, regardless of what happens to the network
+            * congestion control. Can intentionally introduce latency to prevent packet loss
+
+      3. network(IP - Internet Protocol) - used along side the Transport layer to form the TCP/IP layer.
+
+      4. Link(WiFi or ethernet connection)
+
+      5. Physical(cables that are connecting things together)
+
+* 
