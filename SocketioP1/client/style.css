@@ -1,0 +1,32 @@
+.message-box-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 400px;
+}
+
+.message-box-container,
+.message-box {
+  border: 1px solid black;
+}
+
+.message-input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.message-box {
+  height: 100%;
+  width: 100%;
+}
+
+.message-input {
+  width: 83%;
+  height: 20px;
+}
+
+.message-submit {
+  width: 15%;
+  height: 26px;
+}
