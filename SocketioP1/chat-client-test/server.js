@@ -18,6 +18,11 @@ const io = socketio(expressServer, {
 });
 
 // listen for "connection". NOTE: this is socket.io specific. listens for connection requests to this server.
+// all socket.io connections are open on a namespace. This can be an explicitly specified namespace, or default such as this case. our main connection.
+// a namespace is a pool of sockets connected under a given scope(similar to channesl in slack, or discord), and all of the events for listening for data back and forth, from client to server and vise versa are bound to these namespaces.
+// always connected to "/", but have to option to connect to others
+// the instance of socket in the callback inside always belongs to a namespace. That has of the data moving through it bound to that given namespace(default namespace is "/")
+// each namespace can have arbitrary channels, called rooms, which the namespace socket instance, and join and leave 
 io.on("connection", (socket) => {
   // socket param will be our connection. Can listen for incoming data, and send outgoing data.
   socket.emit("messageFromServer", {data: "Welcome to server 3000"});
