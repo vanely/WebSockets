@@ -23,4 +23,4 @@ io.on("connection", (socket, req) => {
 
 console.log(io);
 
-server.listen(5050)
+server.listen(5050);

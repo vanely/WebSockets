@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Client</title>
+</head>
+<body>
+  <h1>Header from Chat Client!</h1>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script> -->
+  <!-- when html page is in same dir as server socket.io can be referenced like this, and is exposed as io -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // request connection from server
+    const socket = io('http://localhost:3000');
+
+    // configure a custom listener to listen to incoming data from server
+    socket.on("messageFromServer", (dataFromServer) => {
+      console.log("Data from server: ", dataFromServer);
+      // configure an emitter to send data to server
+      socket.emit("dataToServer", {data: "Data from the client"});
+    });
+  </script>
+</body>
+</html>
