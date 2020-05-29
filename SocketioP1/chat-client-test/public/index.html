@@ -20,6 +20,13 @@
       // configure an emitter to send data to server
       socket.emit("dataToServer", {data: "Data from the client"});
     });
+
+    socket.on("ping", () => {
+      console.log("Ping received from server!");
+    });
+    socket.on("pong", (latency) => {
+      console.log("Pong sent to server: ", latency);
+    })
   </script>
 </body>
 </html>
