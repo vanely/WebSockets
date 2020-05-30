@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Making it slack</title>
+</head>
+<body>
+  <h1>Chat Room</h1>
+  <div class="chat-container">
+    <div class="chat-messages-container">
+      <ul class="chat-messages">
+        <!-- messages will be dynamically populated -->
+      </ul>
+    </div>
+    <form class="chat-message-entry">
+      <div class="message-input-container">
+        <input class="message-input" type="text" placeholder="Enter your message">
+      </div>
+      <div class="message-submit-container">
+        <input class="message-submit" type="submit" value="Send">
+      </div>
+    </form>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

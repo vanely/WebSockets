@@ -36,9 +36,26 @@
     const msgForm = document.getElementById("message-form");
     const userMsg = document.getElementById("user-msg");
     // request connection from server
-    const socket = io('http://localhost:3000');
+    const socket = io('http://localhost:3300');
+    // if we wanted to access an admin namespace for example we could do this
+    const newSocket = io('http://localhost:3300/newnamespace');
 
+    // test connection to the new namespace
+    // newSocket.on('connect', () => {
+    //   console.log("newSocket id: ",newSocket.id);
+    // });
+
+    newSocket.on("serverMsg", (msg) => {
+      console.log("Server Message On 'newnamespace': ", msg);
+    })
+
+    // the client is completely unaware of rooms. Listening to an event from a room, is like listening to an event from any namespace.
+    newSocket.on('joined', (msg) => {
+      console.log("Message from -> namespace: 'newnamespace', room: 'level1': ", msg);
+    })
+    //---------------------------------------------------------------------------------------------------------------------
     // configure a custom listener to listen to incoming data from server
+    // socket.on() === socket.of('/').on() -> the of() method specifies the namespace that is being used
     socket.on("messageFromServer", (dataFromServer) => {
       console.log("Data from server: ", dataFromServer);
       // configure an emitter to send data to server
