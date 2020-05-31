@@ -1,29 +1,46 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Making it slack</title>
-</head>
-<body>
-  <h1>Chat Room</h1>
-  <div class="chat-container">
-    <div class="chat-messages-container">
-      <ul class="chat-messages">
-        <!-- messages will be dynamically populated -->
-      </ul>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Making it slack</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="workspaces-container">
+        <h2>Work</h2>
+        <h2>Spaces</h2>
+      </div>
+      <div class="rooms-container">
+        <h2>Rooms</h2>
+      </div>
+      <div class="chat-container">
+        <div class="header">
+          <div class="title">
+            <h1>Current Room</h1>
+            <span class="user-count">Users</span>
+          </div>
+          <div class="search-container">
+            <input class="search" type="text" placeholder="search">
+          </div>
+        </div>
+        <div class="chat-messages-container">
+          <ul class="chat-messages">
+            <!-- messages will be dynamically populated -->
+          </ul>
+        </div>
+        <form class="chat-message-entry">
+          <div class="message-input-container">
+            <input class="message-input" type="text" placeholder="Enter your message">
+          </div>
+          <!-- <div class="message-submit-container">
+            <input class="message-submit" type="submit" value="Send">
+          </div> -->
+        </form>
+      </div>
     </div>
-    <form class="chat-message-entry">
-      <div class="message-input-container">
-        <input class="message-input" type="text" placeholder="Enter your message">
-      </div>
-      <div class="message-submit-container">
-        <input class="message-submit" type="submit" value="Send">
-      </div>
-    </form>
-  </div>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="./script.js"></script>
-</body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
